@@ -90,10 +90,10 @@ function getUserData(gitUrl) {
         repos.innerText = `${data.public_repos}`;
         seguidores.innerText = `${data.followers}`;
         siguiendo.innerText = `${data.following}`;
-        ubicacion.innerText = checkNull(data.location, user_location);
-        web.innerText = checkNull(data.blog, page);
+        ubicacion.innerText = checkNull(data.location, location);
+        web.innerText = checkNull(data.blog, web);
         twitter.innerText = checkNull(data.twitter_username, twitter);
-        empresa.innerText = checkNull(data.company, company);
+        empresa.innerText = checkNull(data.company, empresa);
         barraBusqueda.classList.toggle("active");
         perfilContainer.classList.toggle("active");
       } else {

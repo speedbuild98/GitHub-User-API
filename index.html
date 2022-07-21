@@ -1,44 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-      <!-- Meta tags -->
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <!-- Style -->
-      <link rel="stylesheet" href="/src/input.css">
-      <link href="/dist/output.css" rel="stylesheet">
-      <!-- Font -->
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-      <!-- Title -->
-      <title>GitHub App</title>
+  <!-- Meta tags -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Style -->
+  <link rel="stylesheet" href="/src/input.css">
+  <link href="/dist/output.css" rel="stylesheet">
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Title -->
+  <title>GitHub App</title>
 </head>
-<body class="bg-claro relative h-screen w-full border-2 border-sky-200 flex justify-center" style='font-family: "Space Mono", monospace;'>
+
+<body class="bg-claro relative h-screen w-full border-2 border-sky-200 flex justify-center"
+  style='font-family: "Space Mono", monospace;'>
   <div class="">
     <!-- Título y btn dark -->
     <header class="border-b-2 border-slate-400 flex flex-row w-screen justify-between px-2">
-      <h1 class="font-bold text-gris text-xl">Buscador de Usuarios</h1>
-      <div class="flex flex-row cursor-pointer">
-        <div id="btnMode" class="w-4 my-auto"><img id="modeIcon" src="/src/assets/icon-moon.svg" alt="icon-moon"></div>
-        <p id="modoTexto" class="font-bold text-gris ml-1 text-sm my-auto tracking-widest">DARK</p>
-      </div>
+      <h1 class="font-bold text-gris text-xl md:hidden">Buscador de Usuarios</h1>
     </header>
     <main>
       <!-- Barra buscar -->
-      <div id="barraBusqueda" class="bg-blanco rounded-xl flex flex-row mt-4 px-2 justify-between h-12 drop-shadow-lg relative mx-2">
+      <div id="barraBusqueda"
+        class="bg-blanco rounded-xl flex flex-row mt-4 px-2 justify-between h-12 drop-shadow-lg relative w-fit mx-auto">
         <!-- Icono -->
         <img class="h-4 my-auto" src="/src/assets/icon-search.svg" alt="">
         <!-- Input -->
-        <input class="w-1/2 text-center" type="search" name="user-input" id="input" placeholder="Buscar usuario...">
+        <input class="w-[200px] text-center" type="search" name="user-input" id="input" placeholder="Buscar usuario...">
         <!-- Btn Buscar -->
         <button class="font-bold bg-sky-400 rounded-xl p-2 my-1 text-white" id="submit">Buscar</button>
-          <p id="noresults" class="text-xs font-bold absolute left-1/4 text-red-400 hidden">No hay resultados</p>
+        <p id="noresults" class="text-xs font-bold absolute left-1/4 text-red-400 hidden">No hay resultados</p>
       </div>
       <!------ Perfil ------>
-      <div id="perfilContainer" class="bg-blanco rounded-xl mt-10 flex flex-col justify-center mx-4 drop-shadow-lg pb-3">
-          <!-- Foto -->
+      <div id="perfilContainer"
+        class="bg-blanco rounded-xl mt-10 flex flex-col justify-center mx-auto drop-shadow-lg pb-3 max-w-fit">
+        <!-- Foto -->
         <img class="w-[150px] mx-auto rounded-full mt-4" id="avatar" src="/src/assets/LG.png" alt="Imagen de perfil">
         <div class="flex flex-col my-auto mx-auto text-center">
           <!-- Nombre -->
@@ -49,7 +50,7 @@
           <p class="text-amber-500 text-[10px]" id="fecha">Joined 25 Jan 2011</p>
           <!-- Bio -->
           <p id="bio" class="text-slate-500 text-xs">Este perfil no tiene bio</p>
-      <!------ Stats ------>
+          <!------ Stats ------>
           <div class="bg-sky-100 flex flex-row mx-auto rounded-lg justify-around px-2 py-4 mt-6 w-full">
             <!-- Repos -->
             <div class="flex flex-col mx-1">
@@ -67,33 +68,34 @@
               <p id="siguiendo" class="font-black">0</p>
             </div>
           </div>
-      <!------ Links ------>    
-          <div class="flex flex-col justify-center">
+          <!------ Links ------>
+          <div class="flex flex-col justify-center px-2">
             <!-- Ubicación -->
-            <div class="flex flex-row mx-auto mt-3">
+            <div class="flex flex-row mx-auto mt-3 px-2">
               <img class="h-4 my-auto pr-2" src="/src/assets/icon-location.svg" alt="ubicacion icono">
               <p id="ubicacion" class="text-xs"></p>
             </div>
             <!-- Twitter -->
-            <div class="flex flex-row mx-auto mt-2">
+            <div class="flex flex-row mx-auto mt-2 px-2">
               <img class="h-4 my-auto pr-2" src="/src/assets/icon-twitter.svg" alt="twitter icono">
               <p id="twitter" class="text-xs"></p>
             </div>
             <!-- Company -->
-            <div class="flex flex-row mx-auto mt-2">
+            <div class="flex flex-row mx-auto mt-2 px-2">
               <img class="h-4 my-auto pr-2" src="/src/assets/icon-company.svg" alt="company icono">
               <p id="empresa" class="text-xs"></p>
             </div>
             <!-- Web -->
-            <div class="flex flex-row mx-auto mt-2">
+            <div class="flex flex-row mx-auto mt-2  px-2">
               <img class="h-4 my-auto pr-2" src="/src/assets/icon-website.svg" alt="web icono">
-              <a target="_blank" href="https://devgallardo.netlify.app/" id="web" class="max-w-fit"></a>
+              <a target="_blank" href="https://devgallardo.netlify.app/" id="web" class="text-xs"></a>
             </div>
           </div>
         </div>
       </div>
     </main>
   </div>
-<script src="/src/main.js"></script>
+  <script src="/src/main.js"></script>
 </body>
+
 </html>
